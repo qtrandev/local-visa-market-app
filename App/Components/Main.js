@@ -1,12 +1,17 @@
 import React, {
   Component,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 import LoginButton from './LoginButton';
+import styles from '../Styles/defaultStyles';
 
 class Main extends Component {
+  showLock() {
+    // We receive lock from the parent component in this case
+    // If you instantiate it in this component, just do this.lock.show()
+    this.props.lock.show();
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -20,29 +25,10 @@ class Main extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <LoginButton />
+        <LoginButton onClick={this.showLock} />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 export default Main;

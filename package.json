@@ -6,7 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "firebase": "^2.4.2",
+    "firebase-token-generator": "^2.0.0",
     "react-native": "^0.23.1",
-    "react-native-button": "^1.4.2"
+    "react-native-button": "^1.4.2",
+    "react-native-lock": "^0.1.0"
   }
 }

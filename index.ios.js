@@ -9,7 +9,6 @@ import React, {
   StyleSheet,
   NavigatorIOS
 } from 'react-native';
-
 import Main from './App/Components/Main';
 
 class LocalVisaMarket extends Component {
@@ -19,7 +18,8 @@ class LocalVisaMarket extends Component {
         style={styles.container}
         initialRoute={{
           title: 'Local Visa Market',
-          component: Main
+          component: Main,
+          passProps: {lock: this.lock}
         }}
       />
     );

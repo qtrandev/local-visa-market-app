@@ -21,6 +21,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+ios/pods/
 
 # Android/IJ
 #
@@ -32,3 +33,7 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+# app configuration (secrets)
+environments.js
+*.env
