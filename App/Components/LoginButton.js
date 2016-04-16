@@ -17,7 +17,11 @@ class LoginButton extends Component {
 const styles = StyleSheet.create({
   button: {
     fontSize: 20,
-    color: 'green'
+    color: 'green',
+    backgroundColor: 'brown',
+    borderRadius: 4,
+    borderWidth: 4,
+    borderColor: 'blue'
   }
 });
 
