@@ -3,7 +3,7 @@ import React, {
 } from 'react-native';
 import Products from './Visa';
 
-class Main extends Component {
+class Home extends Component {
   render() {
     return (
       <Products />
@@ -11,4 +11,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Home;

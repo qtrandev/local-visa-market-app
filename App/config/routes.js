@@ -1,21 +1,22 @@
 import React, {View,Image,StyleSheet} from 'react-native';
-import Main from '../Components/Main';
+import Home from '../Components/Home';
 import Button from 'react-native-button';
-var Icon = require('react-native-vector-icons/FontAwesome');
+const Icon = require('react-native-vector-icons/FontAwesome');
+const iconSize = 20;
 let ThrifteeRouter = {
   getHomeRoute() {
     return {
       // Return a React component class for the scene. It receives a prop
       // called `navigator` that you can use to push on more routes.
       getSceneClass() {
-        return Main;
+        return Home;
       },
 
       // When this scene receives focus, you can run some code. We're just
       // proxying the `didfocus` event that Navigator emits, so refer to
       // Navigator's source code for the semantics.
       onDidFocus(event) {
-        console.log('Main Scene received focus.');
+        console.log('Home Scene received focus.');
       },
 
       // You can render arbitrary views for the title component. Note that you
@@ -37,11 +38,26 @@ let ThrifteeRouter = {
       // is typically a button but doesn't have to be.
       renderRightButton() {
         return (
-          <Button
-            style={styles.rightButton}
-            onPress={() => { console.log('Tapped right button'); }}>
-            <Icon name="rocket" size={30} color="#900" />
-          </Button>
+          <View style={styles.rbContainer}>
+            <Button
+              onPress={() => console.log('search button clicked')}>
+              <Icon name="search" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+            <Button
+              onPress={() => console.log('camera button clicked')}>
+              <Icon name="camera" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+          </View>
+        );
+      },
+      renderLeftButton() {
+        return (
+          <View style={styles.lbContainer}>
+            <Button
+              onPress={() => console.log('left button clicked')}>
+              <Icon name="bars" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+          </View>
         );
       },
     };
@@ -49,19 +65,15 @@ let ThrifteeRouter = {
 }
 
 const styles = StyleSheet.create({
-  logoContainer: {
+  logo: {
     backgroundColor: 'rgba(52,52,52,0)'
   },
-  logo: {
-    backgroundColor: 'rgba(52,52,52,0)',
-    justifyContent: 'center'
-  },
-  rightButton: {
-    flex: 1,
-    justifyContent: 'center',
+  rbContainer: {
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center'
   }
-
 });
 
 export default ThrifteeRouter;
