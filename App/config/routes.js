@@ -3,6 +3,7 @@ import Home from '../Components/Home';
 import Button from 'react-native-button';
 import Logo from '../Components/Navbar/Logo';
 import LoginView from '../Components/Sidebar/LoginView';
+import Detail from '../Components/Detail';
 const Icon = require('react-native-vector-icons/FontAwesome');
 const iconSize = 20;
 
@@ -62,17 +63,17 @@ let ThrifteeRouter = {
       }
     }
   },
-  getLoginRoute() {
+  getDetailRoute() {
     return {
       getSceneClass() {
-        return LoginView;
+        return Detail;
       },
 
       // When this scene receives focus, you can run some code. We're just
       // proxying the `didfocus` event that Navigator emits, so refer to
       // Navigator's source code for the semantics.
       onDidFocus(event) {
-        console.log('Login Scene received focus.');
+        console.log('Detail Scene received focus.');
       },
 
       renderTitle() {
@@ -80,14 +81,14 @@ let ThrifteeRouter = {
       },
 
       getTitle() {
-        return 'Products';
+        return 'Detail';
       },
 
       renderRightButton() {
-        
+
       },
       renderLeftButton() {
-        
+
       },
     };
   }
