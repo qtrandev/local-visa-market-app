@@ -9,6 +9,7 @@ import Firebase from 'firebase';
 import FirebaseTokenGenerator from "firebase-token-generator";
 import {default as Env} from "../../../environments";
 import styles from '../../Styles/defaultStyles';
+import ThrifteeRouter from '../../config/routes';
 
 class Auth0LockScreen extends Component {
   constructor(props) {
@@ -46,11 +47,7 @@ class Auth0LockScreen extends Component {
         "text": "I'm logged in!",
         "date": new Date().getTime()
       });
-      this.props.navigator.push({
-        title: 'Profile',
-        component: Main,
-        passProps: {lock: this.lock, idToken: authData.uid}
-      });
+      this.props.navigator.push(ThrifteeRouter.getDetailRoute());
     }
   }
   render() {

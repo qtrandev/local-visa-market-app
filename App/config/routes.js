@@ -125,8 +125,8 @@ let ThrifteeRouter = {
   },
   getLoginRoute() {
     return {
-      getSceneClass() {
-        return LoginView;
+      renderScene(navigator) {
+        return <LoginView navigator={navigator} />;
       },
       onDidFocus(event) {
         console.log('Login Screen received focus.');

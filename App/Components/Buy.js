@@ -30,6 +30,7 @@ class Buy extends Component {
     fetch('http://10.24.198.36:3000/visa').then((response) => response.text())
     .then((responseText) => {
       console.log(responseText);
+
       this.props.navigator.push(ThrifteeRouter.getDropoffRoute());
     })
     .catch((error) => {

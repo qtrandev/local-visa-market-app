@@ -11,7 +11,7 @@ class LoginView extends Component {
   render() {
     return (
       <View>
-        <Auth0LockScreen ref="child" />
+        <Auth0LockScreen ref="child" navigator={this.props.navigator} />
       </View>
     );
   }
