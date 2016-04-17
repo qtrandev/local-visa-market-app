@@ -1,4 +1,11 @@
-import React from 'react-native'
+import React, {
+  View,
+  Text
+} from 'react-native';
+import styles from '../Styles/defaultStyles';
+import Button from 'react-native-button';
+import Product from './Product';
+
 
 var LoggedIn = React.createClass({
   getInitialState: function() {
@@ -6,19 +13,18 @@ var LoggedIn = React.createClass({
       profile: null
     }
   },
-
   componentDidMount: function() {
     // In this case, the lock and token are retrieved from the parent component
     // If these are available locally, use `this.lock` and `this.idToken`
-    this.props.lock.getProfile(this.props.idToken, function (err, profile) {
-      if (err) {
-        console.log("Error loading the Profile", err);
-        return;
-      }
-      this.setState({profile: profile});
-    }.bind(this));
+    // do something with props...
   },
-
+  viewProduct: function() {
+    this.props.navigator.push({
+      title: 'Products',
+      component: Product,
+      passProps: {navigator: this.props.navigator}
+    });
+  },
   render: function() {
     if (this.state.profile) {
       return (
@@ -30,10 +36,19 @@ var LoggedIn = React.createClass({
       );
     } else {
       return (
-        <div className="loading">Loading profile</div>
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Loading profile...
+          </Text>
+          <Button 
+            style={styles.button}
+            onPress={this.viewProduct.bind(this)}>
+            View available products
+          </Button>
+        </View>
       );
     }
   }
 });
 
-default export LoggedIn;
+export default LoggedIn;

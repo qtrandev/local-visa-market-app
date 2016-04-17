@@ -6,67 +6,62 @@ import React, {
 import Auth0Lock from 'react-native-lock';
 import Firebase from 'firebase';
 import FirebaseTokenGenerator from "firebase-token-generator";
-import {default as Environment} from "../../environments";
-
-// your firebase reference (from credentials.js)
-let ref = new Firebase(Environment.FIREBASE_REF);
-
-// your custom Auth0 Lock
-let lock = new Auth0Lock({
-  clientId: Environment.AUTH0_CLIENT,
-  domain: Environment.AUTH0_DOMAIN,
-});
+import {default as Env} from "../../environments";
+import LoggedIn from './LoggedIn';
+import styles from '../Styles/defaultStyles';
 
 class LoginButton extends Component {
+  constructor(props) {
+    super(props);
+    this.lock = new Auth0Lock({
+      clientId: Env.AUTH0_CLIENT,
+      domain: Env.AUTH0_DOMAIN
+    });
+    this.ref = new Firebase(Env.FIREBASE_REF)
+    this.tg = new FirebaseTokenGenerator(Env.FIREBASE_SECRET);
+  }
   _login() {
     // show the lock
-    lock.show({}, (err, profile, token) => {
-      if (err) {
-        console.log(err);
-      }
+    this.lock.show({}, this._submit.bind(this));
+  }
+  _submit(err, profile, token) {
+    if (err) {
+      console.error(err);
+    }
+    
+    // use the token generator to create a new token with the userId
+    var ref_token = this.tg.createToken({ uid: profile.userId });
 
-      // firebase token: Firebase app configuration -> secrets
-      var tokenGenerator = new FirebaseTokenGenerator(_getFirebaseToken());
+    this.ref.authWithCustomToken(ref_token, this._handleLoginResponse.bind(this));
+  }
+  _handleLoginResponse(error, authData) {
+    if (error) {
+      console.log('Login Failed!');
+    } else {
+      console.log('Login Successful!');
       
-      // use the token generator to create a new token with the userId
-      var ref_token = tokenGenerator.createToken({ uid: profile.userId });
-
-      ref.authWithCustomToken(ref_token, (error, authData) => {
-        if (error) {
-          console.log('Login Failed!');
-        } else {
-          console.log('Login Successful!');
-          
-          // now use your firebase reference to save some data for the user!
-          var firebase_user_ref = ref.child('users').child(authData.uid);
-          firebase_user_ref.push({
-            "text": "I'm logged in!",
-            "date": new Date().getTime(),
-          });
-        }
+      // now use your firebase reference to save some data for the user!
+      var firebase_user_ref = this.ref.child('users').child(authData.uid);
+      firebase_user_ref.push({
+        "text": "I'm logged in!",
+        "date": new Date().getTime()
       });
-    });
+      this.props.navigator.push({
+        title: 'Profile',
+        component: LoggedIn,
+        passProps: {lock: this.lock, idToken: authData.uid}
+      });
+    }
   }
   render() {
     return (
       <Button
         style={styles.button}
-        onPress={this._login}>
+        onPress={this._login.bind(this)}>
         Login
       </Button>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  button: {
-    fontSize: 20,
-    color: 'green',
-    backgroundColor: 'brown',
-    borderRadius: 4,
-    borderWidth: 4,
-    borderColor: 'blue'
-  }
-});
 
 export default LoginButton;

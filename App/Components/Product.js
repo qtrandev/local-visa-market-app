@@ -5,7 +5,6 @@ import React, {
   Image,
   View
 } from 'react-native';
-
 import Button from 'react-native-button';
 
 class Main extends Component {

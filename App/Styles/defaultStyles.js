@@ -19,6 +19,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+    fontSize: 20,
+    color: 'green',
+    backgroundColor: 'brown',
+    borderRadius: 4,
+    borderWidth: 4,
+    borderColor: 'blue'
+  }
 });
 
 export default styles;

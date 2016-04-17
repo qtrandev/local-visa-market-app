@@ -18,8 +18,7 @@ class LocalVisaMarket extends Component {
         style={styles.container}
         initialRoute={{
           title: 'Local Visa Market',
-          component: Main,
-          passProps: {lock: this.lock}
+          component: Main
         }}
       />
     );

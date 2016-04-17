@@ -7,11 +7,6 @@ import LoginButton from './LoginButton';
 import styles from '../Styles/defaultStyles';
 
 class Main extends Component {
-  showLock() {
-    // We receive lock from the parent component in this case
-    // If you instantiate it in this component, just do this.lock.show()
-    this.props.lock.show();
-  }
   render() {
     return (
       <View style={styles.container}>
@@ -25,7 +20,7 @@ class Main extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <LoginButton onClick={this.showLock} />
+        <LoginButton navigator={this.props.navigator} />
       </View>
     );
   }
