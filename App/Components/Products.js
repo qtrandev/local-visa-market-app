@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 import Button from 'react-native-button';
 
-class Main extends Component {
+class Products extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -96,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main;
+export default Products;

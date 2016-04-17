@@ -6,9 +6,8 @@ import React, {
 import Auth0Lock from 'react-native-lock';
 import Firebase from 'firebase';
 import FirebaseTokenGenerator from "firebase-token-generator";
-import {default as Env} from "../../environments";
-import LoggedIn from './LoggedIn';
-import styles from '../Styles/defaultStyles';
+import {default as Env} from "../../../environments";
+import styles from '../../Styles/defaultStyles';
 
 class LoginButton extends Component {
   constructor(props) {
@@ -48,7 +47,7 @@ class LoginButton extends Component {
       });
       this.props.navigator.push({
         title: 'Profile',
-        component: LoggedIn,
+        component: Main,
         passProps: {lock: this.lock, idToken: authData.uid}
       });
     }

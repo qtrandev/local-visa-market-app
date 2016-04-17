@@ -2,34 +2,18 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
+import React, {AppRegistry, Component} from 'react-native';
+import ExNavigator from '@exponent/react-native-navigator';
+import ThrifteeRouter from './App/config/routes';
 
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  NavigatorIOS
-} from 'react-native';
-import Main from './App/Components/Main';
+import styles from './App/Styles/defaultStyles';
 
 class LocalVisaMarket extends Component {
   render() {
     return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Local Visa Market',
-          component: Main
-        }}
-      />
+      <ExNavigator initialRoute={ThrifteeRouter.getHomeRoute()} />
     );
   }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#111111'
-  },
-});
 
 AppRegistry.registerComponent('LocalVisaMarket', () => LocalVisaMarket);

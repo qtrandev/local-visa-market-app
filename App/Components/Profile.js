@@ -1,36 +1,37 @@
 import React, {
   View,
-  Text
+  Text,
+  Component
 } from 'react-native';
 import styles from '../Styles/defaultStyles';
 import Button from 'react-native-button';
-import Product from './Product';
+import {default as env} from '../../environments.js'
 
 
-var LoggedIn = React.createClass({
-  getInitialState: function() {
+class Profile extends Component {
+  getInitialState() {
     return {
       profile: null
     }
-  },
-  componentDidMount: function() {
+  }
+  componentDidMount() {
     // In this case, the lock and token are retrieved from the parent component
     // If these are available locally, use `this.lock` and `this.idToken`
     // do something with props...
-  },
-  viewProduct: function() {
+  }
+  viewProduct() {
     this.props.navigator.push({
       title: 'Products',
       component: Product,
       passProps: {navigator: this.props.navigator}
     });
-  },
-  render: function() {
+  }
+  render() {
     if (this.state.profile) {
       return (
         <View style={styles.container}>
           <Text style={styles.welcome}>
-            {this.state.profile.nickname}, Welcome to ThrifteeLocal
+            {this.state.profile.nickname}, Welcome to {env.APP_NAME}
           </Text>
         </View>
       );
@@ -49,6 +50,6 @@ var LoggedIn = React.createClass({
       );
     }
   }
-});
+}
 
-export default LoggedIn;
+export default Profile;
