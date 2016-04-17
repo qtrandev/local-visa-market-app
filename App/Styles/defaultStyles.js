@@ -3,6 +3,12 @@ import React, {
 } from 'react-native';
 
 const styles = StyleSheet.create({
+  navBar: {
+    backgroundColor: 'rgb(18,18,74)'
+  },
+  barButton: {
+    backgroundColor: 'white'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

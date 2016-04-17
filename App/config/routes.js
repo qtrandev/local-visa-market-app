@@ -1,4 +1,7 @@
+import React, {View,Image,StyleSheet} from 'react-native';
 import Main from '../Components/Main';
+import Button from 'react-native-button';
+var Icon = require('react-native-vector-icons/FontAwesome');
 let ThrifteeRouter = {
   getHomeRoute() {
     return {
@@ -15,14 +18,50 @@ let ThrifteeRouter = {
         console.log('Main Scene received focus.');
       },
 
-      // Return a string to display in the title section of the navigation bar.
-      // This route's title is displayed next to the back button when you push
-      // a new route on top of this one.
+      // You can render arbitrary views for the title component. Note that you
+      // also need to implement getTitle if you want the title of this route to
+      // show up in the back button to it.
+      renderTitle() {
+        return (
+          <View style={styles.logoContainer}>
+            <Image source={require('../Assets/logo.png')} style={styles.logo} />
+          </View>
+        );
+      },
+
       getTitle() {
-        return 'Main';
-      }
+        return 'Products';
+      },
+
+      // Render the view to display on the right side of the navigation bar. It
+      // is typically a button but doesn't have to be.
+      renderRightButton() {
+        return (
+          <Button
+            style={styles.rightButton}
+            onPress={() => { console.log('Tapped right button'); }}>
+            <Icon name="rocket" size={30} color="#900" />
+          </Button>
+        );
+      },
     };
   }
 }
+
+const styles = StyleSheet.create({
+  logoContainer: {
+    backgroundColor: 'rgba(52,52,52,0)'
+  },
+  logo: {
+    backgroundColor: 'rgba(52,52,52,0)',
+    justifyContent: 'center'
+  },
+  rightButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
+});
 
 export default ThrifteeRouter;
