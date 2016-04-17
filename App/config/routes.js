@@ -5,6 +5,7 @@ import Logo from '../Components/Navbar/Logo';
 import LoginView from '../Components/Sidebar/LoginView';
 import Detail from '../Components/Detail';
 import Buy from '../Components/Buy';
+import Dropoff from '../Components/Dropoff';
 const Icon = require('react-native-vector-icons/FontAwesome');
 const iconSize = 20;
 
@@ -63,6 +64,35 @@ let ThrifteeRouter = {
         );
       }
     }
+  },
+  getDropoffRoute() {
+    return {
+      getSceneClass() {
+        return Dropoff;
+      },
+
+      // When this scene receives focus, you can run some code. We're just
+      // proxying the `didfocus` event that Navigator emits, so refer to
+      // Navigator's source code for the semantics.
+      onDidFocus(event) {
+        console.log('Dropoff Scene received focus.');
+      },
+
+      renderTitle() {
+        <Logo />
+      },
+
+      getTitle() {
+        return 'Dropoff';
+      },
+
+      renderRightButton() {
+
+      },
+      renderLeftButton() {
+
+      }
+    };
   },
   getDetailRoute() {
     return {
