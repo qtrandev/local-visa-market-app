@@ -27,8 +27,15 @@ class Dropoff extends Component {
 
   confirm() {
     console.log("Confirming...");
-
-    this.props.navigator.push(ThrifteeRouter.getHomeRoute());
+    console.log("Making Visa Pull request...");
+    fetch('http://10.24.198.36:3000/push').then((response) => response.text())
+    .then((responseText) => {
+      console.log(responseText);
+      this.props.navigator.push(ThrifteeRouter.getDetailRoute());
+    })
+    .catch((error) => {
+      console.warn(error);
+    });
   }
 }
 
