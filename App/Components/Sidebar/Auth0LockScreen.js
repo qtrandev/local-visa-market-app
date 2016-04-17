@@ -1,7 +1,8 @@
 import Button from 'react-native-button';
 import React, {
   Component,
-  StyleSheet
+  StyleSheet,
+  View
 } from 'react-native';
 import Auth0Lock from 'react-native-lock';
 import Firebase from 'firebase';
@@ -53,7 +54,7 @@ class Auth0LockScreen extends Component {
     }
   }
   render() {
-    return ('');
+    return(<View />);
   }
 }
 

@@ -16,13 +16,24 @@ class Start extends Component {
           style={styles.main}
           source={require('./home.jpg')}
         />
-        <Button
-          style={styles.button}
-          onPress={this.openProduct.bind(this)}>
-          View
-        </Button>
+        <View style={styles.buttonContainer}>
+          <Button
+            style={styles.leftButton}
+            onPress={this.handleLogin.bind(this)}>
+            Login
+          </Button>
+          <Button
+            style={styles.rightButton}
+            onPress={this.openProduct.bind(this)}>
+            View
+          </Button>
+        </View>
       </View>
     );
+  }
+  handleLogin() {
+    console.log('Navigating to auth0 lock screen');
+    this.props.navigator.push(ThrifteeRouter.getLoginRoute());
   }
 
   openProduct() {
@@ -38,6 +49,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  buttonContainer: {
+    flex: 1,
+    flexDirection:'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -48,7 +66,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  button: {
+  rightButton: {
+    textAlign: 'center',
+    color: '#000000',
+    marginBottom: 20,
+    borderWidth: 2,
+    borderRadius: 2
+  },
+  leftButton: {
     textAlign: 'center',
     color: '#000000',
     marginBottom: 20,

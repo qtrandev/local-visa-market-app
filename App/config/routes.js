@@ -90,7 +90,32 @@ let ThrifteeRouter = {
       },
       renderLeftButton() {
 
+      }
+    };
+  },
+  getLoginRoute() {
+    return {
+      getSceneClass() {
+        return LoginView;
       },
+      onDidFocus(event) {
+        console.log('Login Screen received focus.');
+      },
+
+      renderTitle() {
+        <Logo />
+      },
+
+      getTitle() {
+        return 'Login';
+      },
+
+      renderRightButton() {
+
+      },
+      renderLeftButton() {
+
+      }
     };
   },
   getBuyRoute() {

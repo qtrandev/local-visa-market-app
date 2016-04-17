@@ -5,7 +5,8 @@ import React, {
 } from 'react-native';
 import styles from '../Styles/defaultStyles';
 import Button from 'react-native-button';
-import {default as env} from '../../environments.js'
+import {default as env} from '../../environments';
+import ThrifteeRouter from '../config/routes';
 
 
 class Profile extends Component {
@@ -20,11 +21,7 @@ class Profile extends Component {
     // do something with props...
   }
   viewProduct() {
-    this.props.navigator.push({
-      title: 'Products',
-      component: Product,
-      passProps: {navigator: this.props.navigator}
-    });
+    this.props.navigator.push(ThrifteeRouter.getDetailRoute());
   }
   render() {
     if (this.state.profile) {

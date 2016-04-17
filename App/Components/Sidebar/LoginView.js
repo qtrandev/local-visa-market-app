@@ -1,5 +1,6 @@
 import React, {
-  Component
+  Component,
+  View
 } from 'react-native';
 import Auth0LockScreen from './Auth0LockScreen';
 
