@@ -8,26 +8,33 @@ import React, {
 import Button from 'react-native-button';
 import ThrifteeRouter from '../config/routes';
 
-class Detail extends Component {
+class Buy extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Image
           style={styles.main}
-          source={require('./productview.jpg')}
+          source={require('./creditcard.jpg')}
         />
         <Button
           style={styles.button}
-          onPress={this.buyProduct.bind(this)}>
-          Buy
+          onPress={this.visaPull.bind(this)}>
+          Pay
         </Button>
       </View>
     );
   }
 
-  buyProduct() {
-    console.log("Buy product...");
-    this.props.navigator.push(ThrifteeRouter.getBuyRoute());
+  visaPull() {
+    console.log("Making Visa Direct request...");
+    fetch('http://10.24.198.36:3000/visa').then((response) => response.text())
+    .then((responseText) => {
+      console.log(responseText);
+
+    })
+    .catch((error) => {
+      console.warn(error);
+    });
   }
 }
 
@@ -75,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Detail;
+export default Buy;
