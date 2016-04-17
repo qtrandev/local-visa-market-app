@@ -16,6 +16,11 @@ class Products extends Component {
           onPress={this.requestVisaDirect.bind(this)}>
           Request Visa Direct API
         </Button>
+        <Button
+          style={styles.button}
+          onPress={this.pushVisaDirect.bind(this)}>
+          Push Visa Direct API
+        </Button>
       </View>
     );
   }
@@ -23,6 +28,17 @@ class Products extends Component {
   requestVisaDirect() {
     console.log("Making Visa Direct request...");
     fetch('http://10.24.198.36:3000/visa').then((response) => response.text())
+    .then((responseText) => {
+      console.log(responseText);
+    })
+    .catch((error) => {
+      console.warn(error);
+    });
+  }
+
+  pushVisaDirect() {
+    console.log("Making Visa Pull request...");
+    fetch('http://10.24.198.36:3000/push').then((response) => response.text())
     .then((responseText) => {
       console.log(responseText);
     })
