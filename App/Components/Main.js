@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react-native';
-import Products from './Products';
+import Products from './Visa';
 
 class Main extends Component {
   render() {
