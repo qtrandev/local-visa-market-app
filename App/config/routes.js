@@ -1,8 +1,11 @@
 import React, {View,Image,StyleSheet} from 'react-native';
 import Home from '../Components/Home';
 import Button from 'react-native-button';
+import Logo from '../Components/Navbar/Logo';
+import LoginView from '../Components/Sidebar/LoginView';
 const Icon = require('react-native-vector-icons/FontAwesome');
 const iconSize = 20;
+
 let ThrifteeRouter = {
   getHomeRoute() {
     return {
@@ -11,7 +14,6 @@ let ThrifteeRouter = {
       getSceneClass() {
         return Home;
       },
-
       // When this scene receives focus, you can run some code. We're just
       // proxying the `didfocus` event that Navigator emits, so refer to
       // Navigator's source code for the semantics.
@@ -24,9 +26,7 @@ let ThrifteeRouter = {
       // show up in the back button to it.
       renderTitle() {
         return (
-          <View style={styles.logoContainer}>
-            <Image source={require('../Assets/logo.png')} style={styles.logo} />
-          </View>
+          <Logo />
         );
       },
 
@@ -54,11 +54,40 @@ let ThrifteeRouter = {
         return (
           <View style={styles.lbContainer}>
             <Button
-              onPress={() => console.log('left button clicked')}>
+              onPress={() => console.log('pushed left button')}>
               <Icon name="bars" size={iconSize} color="rgb(241,170,38)" />
             </Button>
           </View>
         );
+      }
+    }
+  },
+  getLoginRoute() {
+    return {
+      getSceneClass() {
+        return LoginView;
+      },
+
+      // When this scene receives focus, you can run some code. We're just
+      // proxying the `didfocus` event that Navigator emits, so refer to
+      // Navigator's source code for the semantics.
+      onDidFocus(event) {
+        console.log('Login Scene received focus.');
+      },
+
+      renderTitle() {
+        <Logo />
+      },
+
+      getTitle() {
+        return 'Products';
+      },
+
+      renderRightButton() {
+        
+      },
+      renderLeftButton() {
+        
       },
     };
   }

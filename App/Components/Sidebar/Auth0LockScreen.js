@@ -9,7 +9,7 @@ import FirebaseTokenGenerator from "firebase-token-generator";
 import {default as Env} from "../../../environments";
 import styles from '../../Styles/defaultStyles';
 
-class LoginButton extends Component {
+class Auth0LockScreen extends Component {
   constructor(props) {
     super(props);
     this.lock = new Auth0Lock({
@@ -19,7 +19,7 @@ class LoginButton extends Component {
     this.ref = new Firebase(Env.FIREBASE_REF)
     this.tg = new FirebaseTokenGenerator(Env.FIREBASE_SECRET);
   }
-  _login() {
+  login() {
     // show the lock
     this.lock.show({}, this._submit.bind(this));
   }
@@ -53,14 +53,8 @@ class LoginButton extends Component {
     }
   }
   render() {
-    return (
-      <Button
-        style={styles.button}
-        onPress={this._login.bind(this)}>
-        Login
-      </Button>
-    );
+    return ('');
   }
 }
 
-export default LoginButton;
+export default Auth0LockScreen;
