@@ -4,6 +4,7 @@ import React, {
   ScrollView,
   Image,
   Text,
+  TextInput,
   TouchableHighlight,
   Alert,
   View
@@ -13,6 +14,12 @@ import ThrifteeRouter from '../config/routes';
 class UploadProduct extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title: '',
+      description: '',
+      category: '',
+      price: ''
+    };
   }
   listProduct() {
     Alert.alert('List Product!');
@@ -51,21 +58,33 @@ class UploadProduct extends Component {
         </View>
       </View>
         <View style={styles.descriptionView}>
-          <Text style={styles.productTitle}>
-            Title
-          </Text>
-          <Text style={styles.productDescription}>
-            Description
-          </Text>
-          <Text style={styles.productDescription}>
-            Category
-          </Text>
-          <Text style={styles.productDescription}>
-            Price
-          </Text>
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({title})}
+            placeholder={'Title'}
+            value={this.state.title}
+          />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({description})}
+            placeholder={'Description'}
+            value={this.state.description}
+          />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({category})}
+            placeholder={'Category'}
+            value={this.state.category}
+          />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({price})}
+            placeholder={'Price'}
+            value={this.state.price}
+          />
         </View>
-        <View style={styles.deliveryView}>
-          <Text style={styles.deliveryText}>
+        <View style={styles.totalView}>
+          <Text style={styles.totalText}>
             Total: $XX
           </Text>
         </View>
@@ -86,7 +105,7 @@ class UploadProduct extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 4,
     marginTop: 60
   },
   allImages: {
@@ -101,12 +120,11 @@ const styles = StyleSheet.create({
     height: 50
   },
   descriptionView: {
-    flex: 1,
+    flex: 3,
     flexDirection: 'column',
-    margin: 10,
-
+    margin: 10
   },
-  deliveryView: {
+  totalView: {
     margin: 10,
     alignItems: 'center'
   },
@@ -121,13 +139,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'green'
   },
-  productTitle: {
-    fontSize: 20
+  textInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 10
   },
-  productDescription: {
-
-  },
-  deliveryText: {
+  totalText: {
     fontSize: 20
   },
   button: {

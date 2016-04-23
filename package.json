@@ -12,6 +12,7 @@
     "react": "^0.14.6",
     "react-native": "^0.23.1",
     "react-native-button": "^1.4.2",
+    "react-native-checkbox": "^1.0.8",
     "react-native-file-transfer": "0.0.3",
     "react-native-image-picker": "^0.18.13",
     "react-native-lock": "^0.1.0",

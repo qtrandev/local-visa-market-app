@@ -330,7 +330,18 @@ let ThrifteeRouter = {
       },
 
       renderRightButton(navigator) {
-
+        return (
+          <View style={styles.rbContainer}>
+            <Button
+              onPress={() => navigator.push(ThrifteeRouter.getSearchRoute())}>
+              <Icon name="search" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+            <Button
+              onPress={() => navigator.pop()}>
+              <Icon name="camera" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+          </View>
+        );
       },
       renderLeftButton(navigator) {
         return (
@@ -368,7 +379,18 @@ let ThrifteeRouter = {
       },
 
       renderRightButton(navigator) {
-
+        return (
+          <View style={styles.rbContainer}>
+            <Button
+              onPress={() => navigator.pop()}>
+              <Icon name="search" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+            <Button
+              onPress={() => navigator.push(ThrifteeRouter.getUploadProductRoute())}>
+              <Icon name="camera" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+          </View>
+        );
       },
       renderLeftButton(navigator) {
         return (

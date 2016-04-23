@@ -4,15 +4,29 @@ import React, {
   ScrollView,
   Image,
   Text,
+  TextInput,
   TouchableHighlight,
   Alert,
   View
 } from 'react-native';
 import ThrifteeRouter from '../config/routes';
+import CheckBox from 'react-native-checkbox';
 
 class Search extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      search: '',
+      priceFrom: '',
+      priceTo: '',
+      catcheck1: false,
+      catcheck2: false,
+      catcheck3: false,
+      catcheck4: false,
+      catcheck5: false,
+      catcheck6: false,
+      catcheck7: false
+    };
   }
   search() {
     Alert.alert('Search Products!');
@@ -20,29 +34,110 @@ class Search extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <View style={styles.searchView}>
-        <Text style={styles.productTitle}>
-          Search Box
-        </Text>
-      </View>
-        <View style={styles.descriptionView}>
-          <Text style={styles.productTitle}>
-            Title
+        <View style={styles.searchView}>
+          <TextInput
+            style={styles.searchInput}
+            onChangeText={(text) => this.setState({search})}
+            placeholder={'I\'m looking for...'}
+            value={this.state.search}
+          />
+        </View>
+        <View style={styles.priceView}>
+          <Text style={styles.priceText}>
+            Price from
           </Text>
-          <Text style={styles.productDescription}>
-            Description
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({priceFrom})}
+            placeholder={''}
+            value={this.state.priceFrom}
+          />
+          <Text style={styles.priceText}>
+            to
           </Text>
-          <Text style={styles.productDescription}>
-            Category
-          </Text>
-          <Text style={styles.productDescription}>
-            Price
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.setState({priceTo})}
+            placeholder={''}
+            value={this.state.priceTo}
+          />
+        </View>
+        <View style={styles.titleView}>
+          <Text style={styles.categoryTitle}>
+            Categories
           </Text>
         </View>
-        <View style={styles.deliveryView}>
-          <Text style={styles.deliveryText}>
-            Total: $XX
-          </Text>
+        <View style={styles.descriptionView}>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 1
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck1}
+              onChange={(checked) => this.setState({catcheck1: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 2
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck2}
+              onChange={(checked) => this.setState({catcheck2: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 3
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck3}
+              onChange={(checked) => this.setState({catcheck3: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 4
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck4}
+              onChange={(checked) => this.setState({catcheck4: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 5
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck5}
+              onChange={(checked) => this.setState({catcheck5: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 6
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck6}
+              onChange={(checked) => this.setState({catcheck6: checked})}
+            />
+          </View>
+          <View style={styles.categoryRow}>
+            <Text style={styles.productDescription}>
+              Category 7
+            </Text>
+            <CheckBox
+              label=''
+              checked={this.state.catcheck7}
+              onChange={(checked) => this.setState({catcheck7: checked})}
+            />
+          </View>
         </View>
         <View style={styles.backView}>
           <TouchableHighlight
@@ -62,45 +157,50 @@ class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     marginTop: 60
   },
   searchView: {
-    flex: 1,
-    flexDirection: 'row',
-    margin: 20,
-    justifyContent: 'center',
-    height: 300
-  },
-  imageView: {
-    width: 50,
-    height: 50
+    margin: 20
   },
   descriptionView: {
-    flex: 1,
     flexDirection: 'column',
-    margin: 10,
-
+    margin: 10
   },
-  deliveryView: {
-    margin: 10,
-    alignItems: 'center'
+  categoryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   backView: {
     margin: 10,
     alignItems: 'stretch'
   },
-  image: {
-    height: 50
+  searchInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 10
   },
-  price: {
-    fontSize: 30,
-    color: 'green'
+  titleView: {
+    margin: 10
   },
-  productTitle: {
+  categoryTitle: {
+    fontSize: 25
+  },
+  priceView: {
+    flexDirection: 'row',
+    margin: 10
+  },
+  priceText: {
     fontSize: 20
   },
-  productDescription: {
-
+  textInput: {
+    height: 30,
+    width: 60,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginLeft: 10,
+    marginRight: 10
   },
   deliveryText: {
     fontSize: 20
