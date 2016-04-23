@@ -17,7 +17,7 @@ class Account extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: 'Billy Howard',
+      userName: 'Tommy Tanner',
       selectedTab: 'deliveries'
     };
   }

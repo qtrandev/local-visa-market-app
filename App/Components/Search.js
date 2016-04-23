@@ -70,7 +70,7 @@ class Search extends Component {
         <View style={styles.descriptionView}>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 1
+              Cars & Motors
             </Text>
             <CheckBox
               label=''
@@ -80,7 +80,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 2
+              Sports & Leisure
             </Text>
             <CheckBox
               label=''
@@ -90,7 +90,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 3
+              Home & Garden
             </Text>
             <CheckBox
               label=''
@@ -100,7 +100,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 4
+              Games & Consoles
             </Text>
             <CheckBox
               label=''
@@ -110,7 +110,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 5
+              Books, Movies, & Music
             </Text>
             <CheckBox
               label=''
@@ -120,7 +120,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 6
+              Fashion & Accessories
             </Text>
             <CheckBox
               label=''
@@ -130,7 +130,7 @@ class Search extends Component {
           </View>
           <View style={styles.categoryRow}>
             <Text style={styles.productDescription}>
-              Category 7
+              Baby & Child
             </Text>
             <CheckBox
               label=''

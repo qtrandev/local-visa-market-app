@@ -14,6 +14,7 @@ class ProductPart extends Component {
       productName: props.productName,
       productDescription: props.productDescription,
       productPrice: props.productPrice,
+      productImage: props.productImage,
       sellerName: props.sellerName
     };
   }
@@ -24,7 +25,7 @@ class ProductPart extends Component {
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: this.state.productImage}}
           />
         </View>
         <View style={styles.priceView}>
@@ -110,6 +111,7 @@ ProductPart.defaultProps = {
   productName: 'Billy Howard',
   productDescription: 'Description of product',
   productPrice: '$1234',
+  productImage: 'http://www.qtrandev.com/thriftee/iphone.png',
   sellerName: 'Barry Thomas'
 };
 

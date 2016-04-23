@@ -32,28 +32,28 @@ class UploadProduct extends Component {
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/iphone.png'}}
           />
         </View>
         <View style={styles.imageView}>
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/nike.png'}}
           />
         </View>
         <View style={styles.imageView}>
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/bike.png'}}
           />
         </View>
         <View style={styles.imageView}>
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/iphone.png'}}
           />
         </View>
       </View>
@@ -117,7 +117,8 @@ const styles = StyleSheet.create({
   },
   imageView: {
     width: 50,
-    height: 50
+    height: 50,
+    margin: 4
   },
   descriptionView: {
     flex: 3,

@@ -42,7 +42,7 @@ class Product extends Component {
           <Image
             style={styles.image}
             resizeMode={Image.resizeMode.contain}
-            source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/iphone.png'}}
           />
         </View>
         <View style={styles.priceView}>

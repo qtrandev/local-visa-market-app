@@ -31,6 +31,9 @@ class Products extends Component {
   viewMap() {
     this.props.navigator.push(ThrifteeRouter.getMapRoute());
   }
+  viewAccount() {
+    this.props.navigator.push(ThrifteeRouter.getAccountRoute());
+  }
   viewDriverDelivery() {
     this.props.navigator.push(ThrifteeRouter.getDriverDeliveryRoute());
   }
@@ -68,6 +71,14 @@ class Products extends Component {
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
+          onPress={() => this.viewAccount()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              View Account
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
           onPress={() => this.viewDriverAccount()}
           underlayColor='#bbbbbb'>
             <Text style={styles.buttonText}>
@@ -97,6 +108,7 @@ class Products extends Component {
          productName= {item.productName}
          productDescription= {item.productDescription}
          productPrice= {item.productPrice}
+         productImage= {item.productImage}
          sellerName= {item.sellerName}
          style={styles.productPart}/>
        </TouchableOpacity>
@@ -132,18 +144,21 @@ Products.defaultProps = {
       productName: 'iPhone 6s Plus 64GB',
       productDescription: 'The iPhone is an engineering marvel.',
       productPrice: '$699',
+      productImage: 'http://www.qtrandev.com/thriftee/iphone.png',
       sellerName: 'Zac Thomas'
     },
     {
       roductName: 'Nike Jordan',
       productDescription: 'The best shoes money can buy.',
       productPrice: '$149',
+      productImage: 'http://www.qtrandev.com/thriftee/nike.png',
       sellerName: 'Michael Jardyn'
     },
     {
       productName: 'Fixed Bike',
       productDescription: 'Fixed-speed bikes are the best bikes for casual riding.',
       productPrice: '$130',
+      productImage: 'http://www.qtrandev.com/thriftee/bike.png',
       sellerName: 'Lance Sharapova'
     }
   ]

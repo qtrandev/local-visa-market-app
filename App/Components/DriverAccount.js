@@ -30,7 +30,7 @@ class DriverAccount extends Component {
         <View style={styles.userView}>
           <Image
             style={styles.userIcon}
-            source={{uri: 'https://cdn0.iconfinder.com/data/icons/metro-style-people-svg-icons/48/User_info-512.png'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/driver.png'}}
           />
           <Text style={styles.userName}>
             {this.state.userName}
