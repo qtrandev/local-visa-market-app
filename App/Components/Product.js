@@ -8,19 +8,18 @@ import React, {
   Alert,
   View
 } from 'react-native';
-import Button from 'react-native-button';
 import ThrifteeRouter from '../config/routes';
 
 class Product extends Component {
   constructor(props) {
     super(props);
-    this.state = {productTitle: 'iPhone 6S Plus 64GB'};
+    this.state = {productTitle: 'iPhone 6s Plus 64GB'};
   }
   viewProduct() {
     this.props.navigator.push(ThrifteeRouter.getProductRoute());
   }
   viewAccount() {
-    this.props.navigator.push(ThrifteeRouter.getAccountRoute());
+    this.props.navigator.resetTo(ThrifteeRouter.getAccountRoute());
   }
   goHome() {
     this.props.navigator.popToTop();
@@ -89,11 +88,14 @@ class Product extends Component {
           />
         </View>
         <View style={styles.backView}>
-          <Button
+          <TouchableHighlight
             style={styles.button}
-            onPress={() => this.goHome()}>
-            Back
-          </Button>
+            onPress={() => this.goHome()}
+            underlayColor='#bbbbbb'>
+              <Text style={styles.buttonText}>
+                Back
+              </Text>
+          </TouchableHighlight>
         </View>
         </ScrollView>
       </View>
@@ -174,6 +176,19 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150
   },
+  button: {
+    height: 36,
+    backgroundColor: '#123456',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    margin: 2,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#fff'
+  }
 });
 
 module.exports = Product;

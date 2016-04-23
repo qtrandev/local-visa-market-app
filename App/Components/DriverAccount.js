@@ -13,12 +13,12 @@ var Products = require('./Products');
 var Product = require('./Product');
 var Map = require('./Map');
 
-class Account extends Component {
+class DriverAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userName: 'Billy Howard',
-      selectedTab: 'deliveries'
+      selectedTab: 'completed'
     };
   }
   goHome() {
@@ -54,21 +54,11 @@ class Account extends Component {
               <Products />
             </TabBarIOS.Item>
             <TabBarIOS.Item
-            title="Sold"
-            selected={this.state.selectedTab === 'sold'}
+            title="Completed"
+            selected={this.state.selectedTab === 'completed'}
             onPress={() => {
               this.setState({
-                selectedTab: 'sold',
-              });
-            }}>
-            <Map />
-            </TabBarIOS.Item>
-            <TabBarIOS.Item
-            title="Bought"
-            selected={this.state.selectedTab === 'bought'}
-            onPress={() => {
-              this.setState({
-                selectedTab: 'bought',
+                selectedTab: 'completed',
               });
             }}>
             <Product />
@@ -111,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = Account;
+module.exports = DriverAccount;

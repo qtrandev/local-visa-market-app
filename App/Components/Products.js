@@ -28,6 +28,12 @@ class Products extends Component {
   viewMap() {
     this.props.navigator.push(ThrifteeRouter.getMapRoute());
   }
+  viewDriverDelivery() {
+    this.props.navigator.push(ThrifteeRouter.getDriverDeliveryRoute());
+  }
+  viewDriverAccount() {
+    this.props.navigator.push(ThrifteeRouter.getDriverAccountRoute());
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -47,6 +53,22 @@ class Products extends Component {
           underlayColor='#bbbbbb'>
             <Text style={styles.buttonText}>
               Map
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewDriverAccount()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Driver Account
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewDriverDelivery()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Driver Delivery
             </Text>
         </TouchableHighlight>
         </ScrollView>
@@ -96,7 +118,7 @@ const styles = StyleSheet.create({
 Products.defaultProps = {
   items: [
     {
-      productName: 'iPhone 6S Plus 64GB',
+      productName: 'iPhone 6s Plus 64GB',
       productDescription: 'The iPhone is an engineering marvel.',
       productPrice: '$699',
       sellerName: 'Zac Thomas'
