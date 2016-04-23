@@ -29,7 +29,7 @@ class Auth0LockScreen extends Component {
     if (err) {
       console.error(err);
     }
-    
+
     // use the token generator to create a new token with the userId
     var ref_token = this.tg.createToken({ uid: profile.userId });
 
@@ -38,16 +38,17 @@ class Auth0LockScreen extends Component {
   _handleLoginResponse(error, authData) {
     if (error) {
       console.log('Login Failed!');
+      this.props.navigator.push(ThrifteeRouter.getHomeRoute());
     } else {
       console.log('Login Successful!');
-      
+
       // now use your firebase reference to save some data for the user!
       var firebase_user_ref = this.ref.child('users').child(authData.uid);
       firebase_user_ref.push({
         "text": "I'm logged in!",
         "date": new Date().getTime()
       });
-      this.props.navigator.push(ThrifteeRouter.getDetailRoute());
+      this.props.navigator.push(ThrifteeRouter.getAccountRoute());
     }
   }
   render() {

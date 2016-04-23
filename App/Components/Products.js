@@ -22,6 +22,9 @@ class Products extends Component {
     };
     me = this;
   }
+  login() {
+    this.props.navigator.push(ThrifteeRouter.getLoginRoute());
+  }
   viewProduct() {
     this.props.navigator.push(ThrifteeRouter.getProductRoute());
   }
@@ -39,6 +42,14 @@ class Products extends Component {
       <View style={styles.container}>
         <ScrollView>
         {this.state.items.map(this.renderPart)}
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.login()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Login
+            </Text>
+        </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
           onPress={() => this.viewProduct()}

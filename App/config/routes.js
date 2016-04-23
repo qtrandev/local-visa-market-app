@@ -69,6 +69,31 @@ let ThrifteeRouter = {
       }
     }
   },
+  getLoginRoute() {
+    return {
+      renderScene(navigator) {
+        return <LoginView navigator={navigator} />;
+      },
+      onDidFocus(event) {
+        console.log('Login Screen received focus.');
+      },
+
+      renderTitle() {
+        <Logo />
+      },
+
+      getTitle() {
+        return 'Login';
+      },
+
+      renderRightButton() {
+
+      },
+      renderLeftButton() {
+
+      }
+    };
+  },
   getProductRoute() {
     return {
       getSceneClass() {
