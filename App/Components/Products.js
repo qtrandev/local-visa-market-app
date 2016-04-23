@@ -3,75 +3,117 @@ import React, {
   StyleSheet,
   Image,
   Text,
-  View
+  View,
+  ScrollView,
+  TouchableHighlight,
+  TouchableOpacity,
+  Alert
 } from 'react-native';
-import Button from 'react-native-button';
+import ThrifteeRouter from '../config/routes';
+import ProductPart from './ProductPart';
+
+var me;
 
 class Products extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: props.items
+    };
+    me = this;
+  }
+  viewProduct() {
+    this.props.navigator.push(ThrifteeRouter.getProductRoute());
+  }
+  viewMap() {
+    this.props.navigator.push(ThrifteeRouter.getMapRoute());
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.icon}
-          source={{uri: 'https://alicarnold.files.wordpress.com/2009/11/new-product.jpg'}}
-        />
-        <Text style={styles.welcome}>
-          Product Title
-        </Text>
-        <Text style={styles.instructions}>
-          $1000
-        </Text>
-        <Text style={styles.instructions}>
-          Sam Edelman shoes epitomize chic comfort. With exceptional materials and fine styling, each pair of Sam Edelman shoes is an affordable luxury that cleverly combines a youthful outlook with a worldly sensibility. Sophistication with down-to-earth appeal mean that these shoes are made to be lived in.
-        </Text>
-        <Button style={styles.button}>
-          Buy
-        </Button>
-        <Image
-          style={styles.userIcon}
-          source={{uri: 'https://cdn0.iconfinder.com/data/icons/metro-style-people-svg-icons/48/User_info-512.png'}}
-        />
-        <Text style={styles.welcome}>
-          Seller Name
-        </Text>
-        <Image
-          style={styles.sellerRating}
-          source={{uri: 'http://ridesharegenius.com/wp-content/uploads/2015/03/5-stars-640x162.jpg'}}
-        />
-        <Text style={styles.welcome}>
-          Delivery: 3 hours
-        </Text>
-        <Image
-          style={styles.goButton}
-          source={{uri: 'http://www.shopyourshape.com/wp-content/uploads/2014/06/goButton.png'}}
-        />
+        <ScrollView>
+        {this.state.items.map(this.renderPart)}
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewProduct()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Buy
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewMap()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Map
+            </Text>
+        </TouchableHighlight>
+        </ScrollView>
       </View>
+    );
+  }
+  renderPart(item,i) {
+    return (
+       <TouchableOpacity
+        key={i}
+        activeOpacity={0.5}
+        onPress={() => me.viewProduct()}>
+       <ProductPart
+         key= {i}
+         productName= {item.productName}
+         productDescription= {item.productDescription}
+         productPrice= {item.productPrice}
+         sellerName= {item.sellerName}
+         style={styles.productPart}/>
+       </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
+  },
+  productPart: {
+    padding: 10
+  },
+  button: {
+    height: 36,
+    backgroundColor: '#123456',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    padding: 10,
+    margin: 2,
+    borderRadius: 5
   },
-  userIcon: {
-    width: 50,
-    height: 50,
-    borderWidth: 0.5,
-    borderColor: 'black'
-  },
-  sellerRating: {
-    width: 100,
-    height: 30
-  },
-  goButton: {
-    width: 150,
-    height: 150
+  buttonText: {
+    fontSize: 18,
+    color: '#fff'
   },
 });
 
-export default Products;
+Products.defaultProps = {
+  items: [
+    {
+      productName: 'iPhone 6S Plus 64GB',
+      productDescription: 'The iPhone is an engineering marvel.',
+      productPrice: '$699',
+      sellerName: 'Zac Thomas'
+    },
+    {
+      roductName: 'Nike Jordan',
+      productDescription: 'The best shoes money can buy.',
+      productPrice: '$149',
+      sellerName: 'Michael Jardyn'
+    },
+    {
+      productName: 'Fixed Bike',
+      productDescription: 'Fixed-speed bikes are the best bikes for casual riding.',
+      productPrice: '$130',
+      sellerName: 'Lance Sharapova'
+    }
+  ]
+};
+
+module.exports = Products;

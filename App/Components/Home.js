@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react-native';
-import Products from './Start';
+import Products from './Products';
 
 class Home extends Component {
   render() {

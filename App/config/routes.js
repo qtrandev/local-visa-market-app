@@ -3,9 +3,9 @@ import Home from '../Components/Home';
 import Button from 'react-native-button';
 import Logo from '../Components/Navbar/Logo';
 import LoginView from '../Components/Sidebar/LoginView';
-import Detail from '../Components/Detail';
-import Buy from '../Components/Buy';
-import Dropoff from '../Components/Dropoff';
+import Product from '../Components/Product';
+import Map from '../Components/Map';
+import Account from '../Components/Account';
 const Icon = require('react-native-vector-icons/FontAwesome');
 const iconSize = 20;
 
@@ -65,108 +65,83 @@ let ThrifteeRouter = {
       }
     }
   },
-  getDropoffRoute() {
+  getProductRoute() {
     return {
       getSceneClass() {
-        return Dropoff;
+        return Product;
       },
 
       // When this scene receives focus, you can run some code. We're just
       // proxying the `didfocus` event that Navigator emits, so refer to
       // Navigator's source code for the semantics.
       onDidFocus(event) {
-        console.log('Dropoff Scene received focus.');
+        console.log('Product Scene received focus.');
       },
 
       renderTitle() {
-        <Logo />
-      },
-
-      getTitle() {
-        return 'Dropoff';
-      },
-
-      renderRightButton() {
-
-      },
-      renderLeftButton() {
-
-      }
-    };
-  },
-  getDetailRoute() {
-    return {
-      getSceneClass() {
-        return Detail;
-      },
-
-      // When this scene receives focus, you can run some code. We're just
-      // proxying the `didfocus` event that Navigator emits, so refer to
-      // Navigator's source code for the semantics.
-      onDidFocus(event) {
-        console.log('Detail Scene received focus.');
-      },
-
-      renderTitle() {
-        <Logo />
-      },
-
-      getTitle() {
-        return 'Detail';
-      },
-
-      renderRightButton() {
-
-      },
-      renderLeftButton() {
-
-      }
-    };
-  },
-  getLoginRoute() {
-    return {
-      renderScene(navigator) {
-        return <LoginView navigator={navigator} />;
-      },
-      onDidFocus(event) {
-        console.log('Login Screen received focus.');
-      },
-
-      renderTitle() {
-        <Logo />
-      },
-
-      getTitle() {
-        return 'Login';
-      },
-
-      renderRightButton() {
-
-      },
-      renderLeftButton() {
-
-      }
-    };
-  },
-  getBuyRoute() {
-    return {
-      getSceneClass() {
-        return Buy;
-      },
-
-      // When this scene receives focus, you can run some code. We're just
-      // proxying the `didfocus` event that Navigator emits, so refer to
-      // Navigator's source code for the semantics.
-      onDidFocus(event) {
-        console.log('Buy Scene received focus.');
-      },
-
-      renderTitle() {
-        <Logo />
+        <Product />
       },
 
       getTitle() {
         return 'Pay';
+      },
+
+      renderRightButton() {
+
+      },
+      renderLeftButton() {
+
+      },
+    };
+  },
+  getMapRoute() {
+    return {
+      getSceneClass() {
+        return Map;
+      },
+
+      // When this scene receives focus, you can run some code. We're just
+      // proxying the `didfocus` event that Navigator emits, so refer to
+      // Navigator's source code for the semantics.
+      onDidFocus(event) {
+        console.log('Map Scene received focus.');
+      },
+
+      renderTitle() {
+        <Map />
+      },
+
+      getTitle() {
+        return 'Map';
+      },
+
+      renderRightButton() {
+
+      },
+      renderLeftButton() {
+
+      },
+    };
+  },
+  getAccountRoute() {
+    return {
+      getSceneClass() {
+        return Account;
+      },
+
+      // When this scene receives focus, you can run some code. We're just
+      // proxying the `didfocus` event that Navigator emits, so refer to
+      // Navigator's source code for the semantics.
+      onDidFocus(event) {
+        console.log('Map Scene received focus.');
+      },
+
+      renderTitle() {
+        <Account />
+      },
+
+      getTitle() {
+        return 'Account';
       },
 
       renderRightButton() {
