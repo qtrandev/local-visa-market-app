@@ -148,7 +148,7 @@ Products.defaultProps = {
       sellerName: 'Zac Thomas'
     },
     {
-      roductName: 'Nike Jordan',
+      productName: 'Nike Jordan',
       productDescription: 'The best shoes money can buy.',
       productPrice: '$149',
       productImage: 'http://www.qtrandev.com/thriftee/nike.png',

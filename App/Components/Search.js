@@ -37,7 +37,7 @@ class Search extends Component {
         <View style={styles.searchView}>
           <TextInput
             style={styles.searchInput}
-            onChangeText={(text) => this.setState({search})}
+            onChangeText={(text) => this.setState({search: text})}
             placeholder={'I\'m looking for...'}
             value={this.state.search}
           />
@@ -48,7 +48,7 @@ class Search extends Component {
           </Text>
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({priceFrom})}
+            onChangeText={(text) => this.setState({priceFrom: text})}
             placeholder={''}
             value={this.state.priceFrom}
           />
@@ -57,7 +57,7 @@ class Search extends Component {
           </Text>
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({priceTo})}
+            onChangeText={(text) => this.setState({priceTo: text})}
             placeholder={''}
             value={this.state.priceTo}
           />

@@ -11,7 +11,7 @@ import React, {
 import ThrifteeRouter from '../config/routes';
 var Products = require('./Products');
 var Product = require('./Product');
-var Map = require('./Map');
+var DriverDeliveries = require('./DriverDeliveries');
 
 class Account extends Component {
   constructor(props) {
@@ -61,7 +61,7 @@ class Account extends Component {
                 selectedTab: 'sold',
               });
             }}>
-            <Map />
+            <Product />
             </TabBarIOS.Item>
             <TabBarIOS.Item
             title="Bought"
@@ -71,7 +71,7 @@ class Account extends Component {
                 selectedTab: 'bought',
               });
             }}>
-            <Product />
+            <DriverDeliveries />
             </TabBarIOS.Item>
           </TabBarIOS>
         </View>

@@ -60,25 +60,25 @@ class UploadProduct extends Component {
         <View style={styles.descriptionView}>
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({title})}
+            onChangeText={(text) => this.setState({title: text})}
             placeholder={'Title'}
             value={this.state.title}
           />
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({description})}
+            onChangeText={(text) => this.setState({description: text})}
             placeholder={'Description'}
             value={this.state.description}
           />
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({category})}
+            onChangeText={(text) => this.setState({category: text})}
             placeholder={'Category'}
             value={this.state.category}
           />
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({price})}
+            onChangeText={(text) => this.setState({price: text})}
             placeholder={'Price'}
             value={this.state.price}
           />
