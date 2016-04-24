@@ -51,7 +51,7 @@ class Product extends Component {
             underlayColor='#bbbbbb'
             onPress={() => this.buyProduct()}>
             <Text style={styles.price}>
-              $1000
+              $699
             </Text>
           </TouchableHighlight>
         </View>
@@ -60,7 +60,7 @@ class Product extends Component {
             {this.state.productTitle}
           </Text>
           <Text style={styles.productDescription}>
-            Description of the product.
+            The iPhone is an engineering marvel.
           </Text>
         </View>
         <View style={styles.sellerView}>
@@ -69,7 +69,7 @@ class Product extends Component {
             source={{uri: 'https://cdn0.iconfinder.com/data/icons/metro-style-people-svg-icons/48/User_info-512.png'}}
           />
           <Text style={styles.welcome}>
-            Seller Name
+            Zac Thomas
           </Text>
           <Image
             style={styles.sellerRating}
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     marginTop: 60
   },
   scrollView: {
-    backgroundColor: '#6A85B1',
     height: 300
   },
   imageView: {
@@ -145,13 +144,12 @@ const styles = StyleSheet.create({
     height: 300
   },
   priceButton: {
-    backgroundColor: '#123456',
-    padding: 5,
-    borderRadius: 4
+    backgroundColor: '#f7b700',
+    padding: 5
   },
   price: {
     fontSize: 30,
-    color: 'green'
+    color: 'white'
   },
   productTitle: {
     fontSize: 20

@@ -185,14 +185,16 @@ const styles = StyleSheet.create({
     margin: 10
   },
   categoryTitle: {
-    fontSize: 25
+    fontSize: 25,
+    color: '#14196D'
   },
   priceView: {
     flexDirection: 'row',
     margin: 10
   },
   priceText: {
-    fontSize: 20
+    fontSize: 20,
+    color: '#14196D'
   },
   textInput: {
     height: 30,
@@ -202,12 +204,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10
   },
-  deliveryText: {
-    fontSize: 20
+  productDescription: {
+    color: '#787878'
   },
   button: {
     height: 36,
-    backgroundColor: '#123456',
+    backgroundColor: '#f7b700',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,

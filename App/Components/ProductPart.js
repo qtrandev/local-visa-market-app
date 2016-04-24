@@ -3,6 +3,7 @@ import React, {
   StyleSheet,
   Image,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 import Button from 'react-native-button';
@@ -28,10 +29,16 @@ class ProductPart extends Component {
             source={{uri: this.state.productImage}}
           />
         </View>
+
         <View style={styles.priceView}>
-          <Text style={styles.price}>
-            {this.state.productPrice}
-          </Text>
+          <TouchableHighlight
+            style={styles.priceButton}
+            underlayColor='#bbbbbb'
+            onPress={() => console.log('Price clicked')}>
+            <Text style={styles.price}>
+              {this.state.productPrice}
+            </Text>
+          </TouchableHighlight>
         </View>
         <View style={styles.descriptionView}>
           <Text style={styles.productTitle}>
@@ -85,9 +92,13 @@ const styles = StyleSheet.create({
   image: {
     height: 300
   },
+  priceButton: {
+    backgroundColor: '#f7b700',
+    padding: 5
+  },
   price: {
     fontSize: 30,
-    color: 'green'
+    color: 'white'
   },
   productTitle: {
     fontSize: 20
