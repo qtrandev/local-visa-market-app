@@ -11,6 +11,7 @@ import UploadProduct from '../Components/UploadProduct';
 import DriverAccount from '../Components/DriverAccount';
 import DriverDelivery from '../Components/DriverDelivery';
 import CreditCard from '../Components/CreditCard';
+import SellerCreditCard from '../Components/SellerCreditCard';
 const Icon = require('react-native-vector-icons/FontAwesome');
 const iconSize = 20;
 
@@ -426,6 +427,44 @@ let ThrifteeRouter = {
 
       getTitle() {
         return 'Credit Card';
+      },
+
+      renderRightButton(navigator) {
+
+      },
+      renderLeftButton(navigator) {
+        return (
+          <View style={styles.lbContainer}>
+            <Button
+              onPress={() => navigator.resetTo(ThrifteeRouter.getHomeRoute())}>
+              <Icon name="bars" size={iconSize} color="rgb(241,170,38)" />
+            </Button>
+          </View>
+        );
+      },
+    };
+  },
+  getSellerSignUpRoute() {
+    return {
+      getSceneClass() {
+        return SellerCreditCard;
+      },
+
+      // When this scene receives focus, you can run some code. We're just
+      // proxying the `didfocus` event that Navigator emits, so refer to
+      // Navigator's source code for the semantics.
+      onDidFocus(event) {
+        console.log('Seller Sign Up Scene received focus.');
+      },
+
+      renderTitle(navigator) {
+        return (
+          <Logo />
+        );
+      },
+
+      getTitle() {
+        return 'Seller Sign Up';
       },
 
       renderRightButton(navigator) {

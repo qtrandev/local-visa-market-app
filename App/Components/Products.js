@@ -43,6 +43,9 @@ class Products extends Component {
   viewCreditCard() {
     this.props.navigator.push(ThrifteeRouter.getCreditCardRoute());
   }
+  viewSellerSignUp() {
+    this.props.navigator.push(ThrifteeRouter.getSellerSignUpRoute());
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -102,6 +105,14 @@ class Products extends Component {
           underlayColor='#bbbbbb'>
             <Text style={styles.buttonText}>
               Credit Card
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewSellerSignUp()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Seller Sign Up
             </Text>
         </TouchableHighlight>
         </ScrollView>
