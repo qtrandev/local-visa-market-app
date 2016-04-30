@@ -40,6 +40,9 @@ class Products extends Component {
   viewDriverAccount() {
     this.props.navigator.push(ThrifteeRouter.getDriverAccountRoute());
   }
+  viewCreditCard() {
+    this.props.navigator.push(ThrifteeRouter.getCreditCardRoute());
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -91,6 +94,14 @@ class Products extends Component {
           underlayColor='#bbbbbb'>
             <Text style={styles.buttonText}>
               Driver Delivery
+            </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.viewCreditCard()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Credit Card
             </Text>
         </TouchableHighlight>
         </ScrollView>
