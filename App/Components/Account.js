@@ -10,7 +10,7 @@ import React, {
 } from 'react-native';
 import ThrifteeRouter from '../config/routes';
 var Products = require('./Products');
-var Product = require('./Product');
+var SoldView = require('./SoldView');
 var DriverDeliveries = require('./DriverDeliveries');
 
 class Account extends Component {
@@ -61,7 +61,7 @@ class Account extends Component {
                 selectedTab: 'sold',
               });
             }}>
-            <Product />
+            <SoldView />
             </TabBarIOS.Item>
             <TabBarIOS.Item
             title="Bought"
