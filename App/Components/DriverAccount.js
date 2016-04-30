@@ -18,7 +18,7 @@ class DriverAccount extends Component {
     super(props);
     this.state = {
       userName: 'Billy Howard',
-      selectedTab: 'completed'
+      selectedTab: 'deliveries'
     };
   }
   goHome() {

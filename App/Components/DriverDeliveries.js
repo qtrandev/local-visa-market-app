@@ -67,14 +67,14 @@ DriverDeliveries.defaultProps = {
     },
     {
       name: 'Nike Jordan',
-      pickup: 'Douglas Road 2351, #909',
+      pickup: '1420 Alton Road, #102',
       collected: '9:20 PM',
       contact: 'Michael Jardyn',
       image: 'http://www.qtrandev.com/thriftee/nike.png'
     },
     {
       name: 'Fixed Bike',
-      pickup: 'Douglas Road 2351, #909',
+      pickup: '1200 Lincoln Road',
       collected: '9:50 PM',
       contact: 'Lance Sharapova',
       image: 'http://www.qtrandev.com/thriftee/bike.png'
