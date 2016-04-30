@@ -51,7 +51,8 @@ class ProductItem extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50
+    marginTop: 50,
+    backgroundColor: 'white'
   },
   imageView: {
 

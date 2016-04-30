@@ -9,7 +9,7 @@ import React, {
   TabBarIOS
 } from 'react-native';
 import ThrifteeRouter from '../config/routes';
-var Products = require('./Products');
+var DeliveriesView = require('./DeliveriesView');
 var SoldView = require('./SoldView');
 var BoughtView = require('./BoughtView');
 
@@ -30,7 +30,7 @@ class Account extends Component {
         <View style={styles.userView}>
           <Image
             style={styles.userIcon}
-            source={{uri: 'https://cdn0.iconfinder.com/data/icons/metro-style-people-svg-icons/48/User_info-512.png'}}
+            source={{uri: 'http://www.qtrandev.com/thriftee/user.png'}}
           />
           <Text style={styles.userName}>
             {this.state.userName}
@@ -51,7 +51,7 @@ class Account extends Component {
                   selectedTab: 'deliveries',
                 });
               }}>
-              <Products />
+              <DeliveriesView />
             </TabBarIOS.Item>
             <TabBarIOS.Item
             title="Sold"
@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 6,
     flexDirection: 'column',
-    marginTop: 60
+    marginTop: 60,
+    backgroundColor: '#181c5b'
   },
   userView: {
     flex: 1,
@@ -103,7 +104,8 @@ const styles = StyleSheet.create({
     borderColor: 'black'
   },
   userName: {
-    fontSize: 15
+    fontSize: 15,
+    color: 'white'
   },
   userRating: {
     width: 150,
