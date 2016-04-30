@@ -28,7 +28,10 @@ class ProductItem extends Component {
           />
         </View>
 
-        <View style={styles.priceView}>
+        <View style={styles.descriptionView}>
+          <Text style={styles.productTitle}>
+            {this.state.productName}
+          </Text>
           <TouchableHighlight
             style={styles.priceButton}
             underlayColor='#bbbbbb'
@@ -37,11 +40,6 @@ class ProductItem extends Component {
               {this.state.productPrice}
             </Text>
           </TouchableHighlight>
-        </View>
-        <View style={styles.descriptionView}>
-          <Text style={styles.productTitle}>
-            {this.state.productName}
-          </Text>
         </View>
       </View>
     );
@@ -55,15 +53,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   imageView: {
-
-  },
-  priceView: {
-    margin: 10,
-    alignItems: 'flex-end'
+    marginTop: 20
   },
   descriptionView: {
-    margin: 10,
-    alignItems: 'stretch'
+    flex: 1,
+    margin: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   image: {
     height: 300
