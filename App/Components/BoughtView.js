@@ -9,7 +9,7 @@ import React, {
 } from 'react-native';
 import ProductItem from './ProductItem';
 
-class SoldView extends Component {
+class BoughtView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,19 +51,19 @@ const styles = StyleSheet.create({
   },
 });
 
-SoldView.defaultProps = {
+BoughtView.defaultProps = {
   items: [
     {
-      productName: 'Dell Laptop',
-      productPrice: '$1000',
-      productImage: 'http://www.qtrandev.com/thriftee/laptop.png'
+      productName: 'Fitbit',
+      productPrice: '$30',
+      productImage: 'http://www.qtrandev.com/thriftee/fitbit.png'
     },
     {
-      productName: 'Canon EOS 5D',
-      productPrice: '$3200',
-      productImage: 'http://www.qtrandev.com/thriftee/canon.png'
+      productName: 'Supreme Skateboard',
+      productPrice: '$120',
+      productImage: 'http://www.qtrandev.com/thriftee/skateboard.png'
     }
   ]
 };
 
-module.exports = SoldView;
+module.exports = BoughtView;
