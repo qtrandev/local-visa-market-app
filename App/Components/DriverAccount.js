@@ -9,8 +9,7 @@ import React, {
   TabBarIOS
 } from 'react-native';
 import ThrifteeRouter from '../config/routes';
-var Products = require('./Products');
-var Product = require('./Product');
+var DriverCompleted = require('./DriverCompleted');
 var DriverDeliveries = require('./DriverDeliveries');
 
 class DriverAccount extends Component {
@@ -61,7 +60,7 @@ class DriverAccount extends Component {
                 selectedTab: 'completed',
               });
             }}>
-            <Product />
+            <DriverCompleted />
             </TabBarIOS.Item>
           </TabBarIOS>
         </View>
@@ -74,7 +73,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 6,
     flexDirection: 'column',
-    marginTop: 60
+    marginTop: 60,
+    backgroundColor: '#181c5b'
   },
   userView: {
     flex: 1,
@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
     borderColor: 'black'
   },
   userName: {
-    fontSize: 15
+    fontSize: 15,
+    color: 'white'
   },
   userRating: {
     width: 150,

@@ -30,19 +30,18 @@ class DriverDeliveries extends Component {
   }
   renderPart(item,i) {
     return (
-       <TouchableOpacity
-        key={i}
+      <View style={styles.deliveryPart} key= {i}>
+        <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => me.viewDelivery()}>
-       <DeliveryPart
-         key= {i}
-         name= {item.name}
-         pickup= {item.pickup}
-         collected= {item.collected}
-         contact= {item.contact}
-         image= {item.image}
-         style={styles.deliveryPart}/>
-       </TouchableOpacity>
+        <DeliveryPart
+        name= {item.name}
+        pickup= {item.pickup}
+        collected= {item.collected}
+        contact= {item.contact}
+        image= {item.image}/>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

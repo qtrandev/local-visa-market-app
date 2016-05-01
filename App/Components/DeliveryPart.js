@@ -61,13 +61,12 @@ class DeliveryPart extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   boxView: {
     flex: 1,
-    marginTop: 40,
-    marginLeft: 40,
-    marginRight: 40
+    margin: 20
   },
   imageView: {
 
