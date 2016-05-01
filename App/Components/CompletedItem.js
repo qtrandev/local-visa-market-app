@@ -63,6 +63,16 @@ class CompletedItem extends Component {
             Time: {this.state.dropoffTime}
           </Text>
         </View>
+        <View style={styles.priceView}>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={() => console.log('Price Won button clicked')}
+            underlayColor='#bbbbbb'>
+              <Text style={styles.buttonText}>
+                You won ${this.state.productPrice}
+              </Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -70,7 +80,7 @@ class CompletedItem extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 4,
+    flex: 5,
     flexDirection: 'column',
     backgroundColor: 'white'
   },
@@ -91,6 +101,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10
   },
+  priceView: {
+    flex: 1,
+    alignItems: 'flex-end',
+    padding: 10
+  },
   headerTitle: {
     fontSize: 18,
     paddingBottom: 10,
@@ -100,6 +115,19 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16
+  },
+  button: {
+    height: 36,
+    backgroundColor: '#f7b700',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    margin: 2,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#fff'
   }
 });
 

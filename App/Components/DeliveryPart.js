@@ -47,7 +47,7 @@ class DeliveryPart extends Component {
           </Text>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.goBack()}
+            onPress={() => console.log('Pickup button clicked')}
             underlayColor='#bbbbbb'>
               <Text style={styles.buttonText}>
                 Pickup

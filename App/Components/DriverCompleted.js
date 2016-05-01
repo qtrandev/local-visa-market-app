@@ -60,7 +60,7 @@ DriverCompleted.defaultProps = {
   items: [
     {
       productName: 'Beats Headphones',
-      productPrice: '45',
+      productPrice: '25',
       driverName: 'Billy',
       pickupAddress: '420 Lincoln Road, Miami Beach',
       pickupDate: 'February 23, 2016',
@@ -70,15 +70,15 @@ DriverCompleted.defaultProps = {
       dropoffTime: '7:15PM'
     },
     {
-      productName: 'iPhone',
+      productName: 'iPhone 6s Plus 64GB',
       productPrice: '45',
       driverName: 'Billy',
-      pickupAddress: '420 Lincoln Rd, Miami Beach',
-      pickupDate: 'February 23, 2016',
-      pickupTime: '4:15PM',
-      dropoffAddress: '1111 Alton Rd, Miami Beach',
-      dropoffDate: 'February 23, 2016',
-      dropoffTime: '7:15PM'
+      pickupAddress: '1000 Lincoln Rd, Miami Beach',
+      pickupDate: 'February 21, 2016',
+      pickupTime: '6:15PM',
+      dropoffAddress: '235 5th St, Miami Beach',
+      dropoffDate: 'February 21, 2016',
+      dropoffTime: '7:35PM'
     }
   ]
 };
