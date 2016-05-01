@@ -488,7 +488,11 @@ const styles = StyleSheet.create({
   logo: {
     backgroundColor: 'rgba(52,52,52,0)'
   },
+  lbContainer: {
+    margin: 5
+  },
   rbContainer: {
+    margin: 5,
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'space-between',

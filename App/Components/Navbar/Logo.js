@@ -9,7 +9,10 @@ class Logo extends Component {
   render() {
     return (
       <View>
-        <Image source={require('../../Assets/logo.png')} style={styles.logo} />
+        <Image
+          source={require('../../Assets/logo.png')}
+          resizeMode={Image.resizeMode.contain}
+          style={styles.logo} />
       </View>
     );
   }
@@ -17,6 +20,7 @@ class Logo extends Component {
 
 const styles = StyleSheet.create({
   logo: {
+    height: 40,
     backgroundColor: 'rgba(52,52,52,0)'
   }
 });
