@@ -14,14 +14,20 @@ var markers = [
   {
     latitude: 25.786017,
     longitude: -80.135296,
-    title: 'Home',
+    title: 'iPhone 6s Plus 64GB',
     subtitle: 'Miami Beach, Florida'
   },
   {
     latitude: 25.686017,
     longitude: -80.335296,
-    title: 'Work',
+    title: 'Fitbit',
     subtitle: 'Miami, Florida'
+  },
+  {
+    latitude: 25.886017,
+    longitude: -80.335296,
+    title: 'Dell Laptop',
+    subtitle: 'Miami Lakes, Florida'
   }
 ];
 
@@ -37,15 +43,15 @@ class Map extends Component {
           region={{
             latitude: 25.786017,
             longitude: -80.135296,
-            latitudeDelta: 50,
-            longitudeDelta: 50
+            latitudeDelta: 5,
+            longitudeDelta: 5
           }}
           overlays={[{
           coordinates:[
-            {latitude: 32.47, longitude: -107.85},
-            {latitude: 45.13, longitude: -94.48},
-            {latitude: 39.27, longitude: -83.25},
-            {latitude: 32.47, longitude: -107.85},
+            {latitude: 25.786017, longitude: -80.135296},
+            {latitude: 25.686017, longitude: -80.335296},
+            {latitude: 25.886017, longitude: -80.335296},
+            {latitude: 25.786017, longitude: -80.135296},
           ],
           strokeColor: '#f007',
           lineWidth: 10,
