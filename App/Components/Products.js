@@ -115,6 +115,16 @@ class Products extends Component {
               Seller Sign Up
             </Text>
         </TouchableHighlight>
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>
+            Powered by
+          </Text>
+          <Image
+            style={styles.footerImage}
+            resizeMode={Image.resizeMode.contain}
+            source={require('../Assets/visa.png')}
+          />
+        </View>
         </ScrollView>
       </View>
     );
@@ -157,6 +167,19 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: '#fff'
+  },
+  footer: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#181c5b'
+  },
+  footerText: {
+    marginTop: 20,
+    fontSize: 16,
+    color: '#fff'
+  },
+  footerImage: {
+    marginBottom: 20
   },
 });
 
