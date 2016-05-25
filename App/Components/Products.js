@@ -1,6 +1,7 @@
 import React, {
   Component,
   StyleSheet,
+  PropTypes,
   Image,
   Text,
   View,
@@ -12,14 +13,27 @@ import React, {
 import ThrifteeRouter from '../config/routes';
 import ProductPart from './ProductPart';
 
+import { replaceProducts } from '../Redux/indexAction';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
 var me;
+
+function mapStateToProps(state) {
+  return {
+    items: state.products
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    replaceProducts
+  }, dispatch);
+}
 
 class Products extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      items: props.items
-    };
     me = this;
   }
   login() {
@@ -46,11 +60,25 @@ class Products extends Component {
   viewSellerSignUp() {
     this.props.navigator.push(ThrifteeRouter.getSellerSignUpRoute());
   }
+  refreshProducts() {
+    this.props.replaceProducts(
+      [
+        {
+          id: '4',
+          productName: 'Nexus 5X',
+          productDescription: 'The Nexus 5X is an engineering marvel.',
+          productPrice: '$699',
+          productImage: 'http://www.qtrandev.com/thriftee/iphone.png',
+          sellerName: 'Zac Thomas'
+        }
+      ]
+    );
+  }
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
-        {this.state.items.map(this.renderPart)}
+        {this.props.items.map(this.renderPart)}
         <TouchableHighlight
           style={styles.button}
           onPress={() => this.login()}
@@ -115,6 +143,14 @@ class Products extends Component {
               Seller Sign Up
             </Text>
         </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.refreshProducts()}
+          underlayColor='#bbbbbb'>
+            <Text style={styles.buttonText}>
+              Refresh Products
+            </Text>
+        </TouchableHighlight>
         <View style={styles.footer}>
           <Text style={styles.footerText}>
             Powered by
@@ -132,11 +168,11 @@ class Products extends Component {
   renderPart(item,i) {
     return (
        <TouchableOpacity
-        key={i}
+        key={item.id}
         activeOpacity={0.5}
         onPress={() => me.viewProduct()}>
        <ProductPart
-         key= {i}
+         key= {item.id}
          productName= {item.productName}
          productDescription= {item.productDescription}
          productPrice= {item.productPrice}
@@ -183,30 +219,8 @@ const styles = StyleSheet.create({
   },
 });
 
-Products.defaultProps = {
-  items: [
-    {
-      productName: 'iPhone 6s Plus 64GB',
-      productDescription: 'The iPhone is an engineering marvel.',
-      productPrice: '$699',
-      productImage: 'http://www.qtrandev.com/thriftee/iphone.png',
-      sellerName: 'Zac Thomas'
-    },
-    {
-      productName: 'Nike Jordan',
-      productDescription: 'The best shoes money can buy.',
-      productPrice: '$149',
-      productImage: 'http://www.qtrandev.com/thriftee/nike.png',
-      sellerName: 'Michael Jardyn'
-    },
-    {
-      productName: 'Fixed Bike',
-      productDescription: 'Fixed-speed bikes are the best bikes for casual riding.',
-      productPrice: '$130',
-      productImage: 'http://www.qtrandev.com/thriftee/bike.png',
-      sellerName: 'Lance Sharapova'
-    }
-  ]
-};
+Products.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object)
+}
 
-module.exports = Products;
+export default connect(mapStateToProps, mapDispatchToProps)(Products)
