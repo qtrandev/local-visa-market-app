@@ -27,6 +27,8 @@ const items = [
 
 const products = (state = items, action) => {
   switch (action.type) {
+    case 'REQUEST_PRODUCTS':
+      return state;
     case 'REPLACE_PRODUCTS':
       return action.payload;
     case 'ADD_PRODUCT':

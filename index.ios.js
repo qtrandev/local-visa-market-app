@@ -6,10 +6,11 @@ import React, {AppRegistry, Component, StyleSheet} from 'react-native';
 import ExNavigator from '@exponent/react-native-navigator';
 import ThrifteeRouter from './App/config/routes';
 
+import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './App/Redux/indexReducer';
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
 import styles from './App/Styles/defaultStyles';
 

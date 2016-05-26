@@ -13,7 +13,7 @@ import React, {
 import ThrifteeRouter from '../config/routes';
 import ProductPart from './ProductPart';
 
-import { replaceProducts } from '../Redux/indexAction';
+import { requestProducts } from '../Redux/indexAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
@@ -27,7 +27,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    replaceProducts
+    requestProducts
   }, dispatch);
 }
 
@@ -61,18 +61,7 @@ class Products extends Component {
     this.props.navigator.push(ThrifteeRouter.getSellerSignUpRoute());
   }
   refreshProducts() {
-    this.props.replaceProducts(
-      [
-        {
-          id: '4',
-          productName: 'Nexus 5X',
-          productDescription: 'The Nexus 5X is an engineering marvel.',
-          productPrice: '$699',
-          productImage: 'http://www.qtrandev.com/thriftee/iphone.png',
-          sellerName: 'Zac Thomas'
-        }
-      ]
-    );
+    this.props.requestProducts();
   }
   render() {
     return (
