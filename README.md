@@ -1,4 +1,4 @@
-# Thriftee App (eMerge Americas Hackathon)
+# Thriftee App (React Native, Redux, Firebase)
 
 ## User Interface (UI) Demo (iPhone 5s)
 
