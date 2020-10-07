@@ -2,12 +2,12 @@
 
 ## User Interface (UI) Demo (iPhone 5s)
 
-![https://www.youtube.com/watch?v=6F3XIGmoP-U](https://img.youtube.com/vi/6F3XIGmoP-U/maxresdefault.jpg)
+[![Thriftee UI Demo](https://img.youtube.com/vi/6F3XIGmoP-U/maxresdefault.jpg)](https://www.youtube.com/watch?v=6F3XIGmoP-U)
 https://www.youtube.com/watch?v=6F3XIGmoP-U
 
 ## User Interface (UI) Demo with Additonal Features (iPhone 6s)
 
-![https://www.youtube.com/watch?v=zgdCdx6cIvM](https://img.youtube.com/vi/zgdCdx6cIvM/maxresdefault.jpg)
+[![Thriftee UI Demo 2](https://img.youtube.com/vi/zgdCdx6cIvM/maxresdefault.jpg)](https://www.youtube.com/watch?v=zgdCdx6cIvM)
 https://www.youtube.com/watch?v=zgdCdx6cIvM
 
 ## React Native Related Instructions
