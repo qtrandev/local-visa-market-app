@@ -1,3 +1,17 @@
+# Thriftee App (eMerge Americas Hackathon)
+
+## User Interface (UI) Demo (iPhone 5s)
+
+![https://www.youtube.com/watch?v=6F3XIGmoP-U](https://img.youtube.com/vi/6F3XIGmoP-U/maxresdefault.jpg)
+https://www.youtube.com/watch?v=6F3XIGmoP-U
+
+## User Interface (UI) Demo with Additonal Features (iPhone 6s)
+
+![https://www.youtube.com/watch?v=zgdCdx6cIvM](https://img.youtube.com/vi/zgdCdx6cIvM/maxresdefault.jpg)
+https://www.youtube.com/watch?v=zgdCdx6cIvM
+
+## React Native Related Instructions
+
 ### Developing on Mac OS X to run on iOS Client ###
 
 * Get [brew package manager](http://brew.sh/)
